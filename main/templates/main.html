@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Personal world</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <img src="{% static 'images/The_moon.png' %}" alt="Moon" class="moon-image">
+    <h1 class="center-text">Happy birthday, The Love Of My Life!</h1>
+     <!-- Падающие звезды -->
+     <div class="stars"></div>
+
+     <script src="{% static 'js/script.js' %}"></script>
+    <div class="button-container">
+      <a href="{% url 'poems' %}" class="button">Poems</a>
+      <a href="{% url 'gifts' %}" class="button">Gifts</a>
+      <a href="{% url 'letters' %}" class="button">Letters</a>
+    </div>
+  </div>
+</body>
+</html>

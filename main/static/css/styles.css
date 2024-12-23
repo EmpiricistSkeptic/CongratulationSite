@@ -45,7 +45,7 @@ body {
     }
   
     .moon-image {
-      width: 250px; /* Размер луны */
+      width: 200px; /* Размер луны */
       height: auto;
       display: block;
       margin: 0 auto 20px auto; /* Центрируем и добавляем отступ под луной */

@@ -1,16 +1,14 @@
 body {
-    background: url('{% static "images/background1.jpg" %}') no-repeat center center fixed; /* Устанавливаем изображение */
-    background-size: cover; /* Масштабируем изображение, чтобы покрыть весь экран */
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #fff; /* Белый цвет текста */
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Горизонтальное центрирование */
-    align-items: center;    /* Вертикальное центрирование */
-    flex-direction: column;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #fff; /* Белый цвет текста */
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center;    /* Вертикальное центрирование */
+  flex-direction: column;
+}
     
     .container {
       text-align: center; /* Центрируем текст внутри контейнера */
@@ -47,12 +45,12 @@ body {
     }
   
     .moon-image {
-      width: 200px; /* Размер луны */
+      width: 250px; /* Размер луны */
       height: auto;
       display: block;
       margin: 0 auto 20px auto; /* Центрируем и добавляем отступ под луной */
       position: relative;
-      top: -50px;
+      top: -90px;
     }
   
     /* Падающие звезды */

@@ -21,7 +21,9 @@ body {
       text-align: center; /* Центрируем текст */
       font-family: 'Dancing Script', cursive; /* Подключаем красивый шрифт */
       text-shadow: 0 0 10px #fff, 0 0 20px rgb(38, 0, 255), 0 0 30px rgb(0, 38, 255), 0 0 40px rgb(17, 0, 255); /* Эффект свечения */
-      margin-top: 50px; /* Добавляем отступ сверху */
+      margin-top: 0px; /* Добавляем отступ сверху */
+      position: relative;
+      top: -150px
     }
     
     
@@ -50,7 +52,7 @@ body {
       display: block;
       margin: 0 auto 20px auto; /* Центрируем и добавляем отступ под луной */
       position: relative;
-      top: -90px;
+      top: -150px;
     }
   
     /* Падающие звезды */
@@ -68,7 +70,7 @@ body {
       position: absolute;
       width: 2px;
       height: 100px;
-      background: linear-gradient(to right white, transparent); /* Градиент сверху */
+      background: linear-gradient(to top white, transparent); /* Градиент сверху */
       opacity: 0.8;
       animation: fall 6s linear infinite;
     }

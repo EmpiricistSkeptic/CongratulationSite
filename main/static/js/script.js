@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const star = document.createElement("div");
         star.classList.add("falling-star");
 
-        // Задаём случайную позицию и скорость
-        star.style.left = `${Math.random() * 100}vw`; // добавлены кавычки для шаблонной строки
-        star.style.animationDuration = `${2 + Math.random() * 3}s`; // добавлены кавычки и единицы измерения (s)
+        // Задаём случайную горизонтальную позицию появления
+        star.style.left = (Math.random() * 100) + "vw";
+        star.style.top = (-Math.random() * 50) + "px";
+        star.style.animationDuration = (5 + Math.random() * 3) + "s";
 
         // Добавляем звезду в контейнер
         starContainer.appendChild(star);
@@ -19,6 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Генерируем звезды каждые 1-2 секунды
-    setInterval(createFallingStar, 1000);
+    setInterval(createFallingStar, 2000);
 });
 

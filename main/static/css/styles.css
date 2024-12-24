@@ -54,33 +54,32 @@ body {
     }
   
     /* Падающие звезды */
-  .stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 5;
-  }
-  
-  .falling-star {
-    position: absolute;
-    width: 2px;
-    height: 100px;
-    background: linear-gradient(white, transparent);
-    opacity: 0.8;
-    animation: fall 3s linear infinite;
-  }
-  
-  @keyframes fall {
-    0% {
-      transform: translateY(-100px);
-      opacity: 1;
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 5;
     }
-    100% {
-      transform: translateY(100vh);
-      opacity: 0;
-    }
-  }
     
+    .falling-star {
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to right white, transparent); /* Градиент сверху */
+      opacity: 0.8;
+      animation: fall 6s linear infinite;
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translateX(0) translateY(0) rotate(-45deg); /* Угол наклона звезды */
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-150vw) translateY(150vh) rotate(-45deg); /* Траектория падения */
+        opacity: 0;
+      }
+    }

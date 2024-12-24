@@ -4,57 +4,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poems for My Love</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <title>Стихи для моей любимой</title>
+  <style>
+    body.poem-page {
+      font-family: Arial, sans-serif;
+      background-color: #fef5e7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .poem-text {
+      margin: 20px;
+      padding: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.5;
+      border: 2px solid #000;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 2px solid #000;
+      background-color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
 </head>
-<body id="poem-page">
-  <header>
-    <h1>Стихи для моей любимой</h1>
-  </header>
+<body class="poem-page">
+  <div class="poem-text"></div>
 
-  <main>
-    <div class="poem-container">
-      <p class="poem-text">
-        "Тихий вечер, звезды в небе,<br> 
-        Светит Луна, мерцает небо.<br>
-        Моё сердце поёт в любви,<br>
-        Лишь ты одна - мой свет внутри."
-      </p>
-    </div>
-
-    <div class="navigation-buttons">
-      <button id="prev-btn" class="nav-btn">← Назад</button>
-      <button id="next-btn" class="nav-btn">Вперед →</button>
-    </div>
-  </main>
-
-  <footer>
-    <a href="{% url 'main' %}" class="button">Назад на главную</a>
-  </footer>
+  <!-- Кнопки навигации -->
+  <button id="prev-btn" class="nav-btn">← Назад</button>
+  <button id="next-btn" class="nav-btn">Вперёд →</button>
 
   <script>
-    // Пример JavaScript для перелистывания страниц
+    // Массив стихов
     const poems = [
-      "Стих 1 текст...",
+      `Тихий вечер, звезды в небе,<br>
+      Светит Луна, мерцает небо.<br>
+      Моё сердце поёт в любви,<br>
+      Лишь ты одна - мой свет внутри.`,
       "Стих 2 текст...",
-      "Стих 3 текст...",
+      "Стих 3 текст..."
     ];
+
     let currentPoem = 0;
 
+    // Функция обновления текста стиха
+    function updatePoem() {
+      document.querySelector(".poem-text").innerHTML = poems[currentPoem];
+    }
+
+    // Кнопка "Назад"
     document.getElementById("prev-btn").onclick = function () {
       if (currentPoem > 0) {
         currentPoem--;
-        document.querySelector(".poem-text").innerHTML = poems[currentPoem];
+        updatePoem();
       }
     };
 
+    // Кнопка "Вперёд"
     document.getElementById("next-btn").onclick = function () {
       if (currentPoem < poems.length - 1) {
         currentPoem++;
-        document.querySelector(".poem-text").innerHTML = poems[currentPoem];
+        updatePoem();
       }
     };
+
+    // Первоначальная загрузка первого стиха
+    updatePoem();
   </script>
 </body>
 </html>

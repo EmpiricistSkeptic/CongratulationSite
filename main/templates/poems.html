@@ -1,14 +1,60 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poems</title>
+  <title>Poems for My Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
-  <div class="container">
-    <h1>Poems for my Love</h1>
-    <a href="{% url 'main' %}" class="button">Back to Main</a>
-  </div>
+<body id="poem-page">
+  <header>
+    <h1>Стихи для моей любимой</h1>
+  </header>
+
+  <main>
+    <div class="poem-container">
+      <p class="poem-text">
+        "Тихий вечер, звезды в небе,<br> 
+        Светит Луна, мерцает небо.<br>
+        Моё сердце поёт в любви,<br>
+        Лишь ты одна - мой свет внутри."
+      </p>
+    </div>
+
+    <div class="navigation-buttons">
+      <button id="prev-btn" class="nav-btn">← Назад</button>
+      <button id="next-btn" class="nav-btn">Вперед →</button>
+    </div>
+  </main>
+
+  <footer>
+    <a href="{% url 'main' %}" class="button">Назад на главную</a>
+  </footer>
+
+  <script>
+    // Пример JavaScript для перелистывания страниц
+    const poems = [
+      "Стих 1 текст...",
+      "Стих 2 текст...",
+      "Стих 3 текст...",
+    ];
+    let currentPoem = 0;
+
+    document.getElementById("prev-btn").onclick = function () {
+      if (currentPoem > 0) {
+        currentPoem--;
+        document.querySelector(".poem-text").innerHTML = poems[currentPoem];
+      }
+    };
+
+    document.getElementById("next-btn").onclick = function () {
+      if (currentPoem < poems.length - 1) {
+        currentPoem++;
+        document.querySelector(".poem-text").innerHTML = poems[currentPoem];
+      }
+    };
+  </script>
 </body>
 </html>

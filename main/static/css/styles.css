@@ -85,3 +85,38 @@ body {
         opacity: 0;
       }
     }
+
+
+    /* Общий стиль для всех устройств */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Dancing Script', cursive;
+  background-color: #0c0505; /* На случай, если фон не загрузится */
+}
+
+#poem-page {
+  background-image: url("{% static 'images/old-paper-texture.jpg' %}");
+  background-size: cover;
+  background-position: center;
+}
+
+.poem-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Адаптивный стиль для телефонов */
+@media (max-width: 768px) {
+  .poem-text {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .nav-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
